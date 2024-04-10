@@ -1,0 +1,44 @@
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    flex: 0 0 150px;
+    text-align: left;
+    margin-right: 15px;
+    color: #001524;
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #001524;
+  }
+  
+  .form-select {
+    max-width: 200px; /* Adjust as needed */
+    color: #001524;
+  }
+  
+  .form-textarea {
+    resize: vertical;
+    height: 100px; /* Adjust as needed */
+  }
+  .signup-title {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    border-radius: 25px; 
+  }
+  .btn{
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+  }
