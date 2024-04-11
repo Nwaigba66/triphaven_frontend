@@ -33,6 +33,8 @@ export const Signup = () => {
         formData.append("password", password);
         formData.append("imageUrl", image);
 
+        const newUser = {title, firstName, lastName, userName, email, password }
+
         //Reset the form
         setTitle("");
         setFirstName("");
@@ -44,14 +46,14 @@ export const Signup = () => {
 
         // const userToCreate = { userName, email, password };
         try {
-            const response = await axios.post("http://localhost:3000/auth/signup", myFormData);
+            const response = await axios.post("http://localhost:3000/auth/signup", formData, newUser);
             console.log("You created a user", response.data);
             
             //this code allows new users navigate to the login page after creating a user account
             nav("/login");
 
         } catch(err) {
-            console.log("you've experienced an error signing up", err.response.data.errorMessage);
+            console.log("you've experienced an error signing up", err);
             setError(err.response.data.errorMessage);
         }
        

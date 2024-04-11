@@ -9,11 +9,15 @@ export const Login = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
-    const { aunthenticateUser } = useContext(AuthContext);
+    const { authenticateUser } = useContext(AuthContext);
     const nav = useNavigate();
 
+  
+   
     //this is the onSubmit function
     const handleLogin = async (event) => {
+      setIsLoggedIn(true);
+      console.log(`isLoggedIn: ${isLoggedIn}`);
         event.preventDefault();
 
         const userLogin = { email, userName, password };
@@ -25,10 +29,10 @@ export const Login = () => {
             localStorage.setItem("authToken", response.data.authToken);
 
             //this code below will call the function set verify the token and set the user before going to the  home page.
-            await aunthenticateUser();
-            nav('/'); 
+            await authenticateUser();
+            nav('/home'); 
         } catch (err) {
-            console.log("Error occured while signing up", err.response.data.errorMessage);
+            console.log("Error occured while signing up", err);
             setError(err.response.data.errorMessage);
         }   
     }
@@ -80,7 +84,10 @@ export const Login = () => {
           />
        
         </div>
-        <button>Login</button>
+       
+        <button link to="/home" className="login" onClick={handleLogin}>
+          Login
+          </button>
       </form>
       {error ? <h4 className="error-message">{error}</h4> : null}
     </div>

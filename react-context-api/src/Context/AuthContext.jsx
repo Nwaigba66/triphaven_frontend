@@ -6,9 +6,9 @@ const AuthContext = createContext();
 
 //the wrapper that will wrap my app
 const AuthWrapper = ({ children}) => {
-    const [user, setUser] = useState("null");
-    const [loading, setLoading] = useState("true");
-    const [loggedIn, setLoggedIn] = useState("false");
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [loggedIn, setLoggedIn] = useState(false);
 
     //this function checks if there is a token and if so, if it is valid
     const authenticateUser = async () => {

@@ -5,7 +5,7 @@ export const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-signup">
-                    <h3>Sign up for monthly digest</h3>
+                    <h3>Subscribe for booking</h3>
                     <form action="#">
                         <input type="email" placeholder="Your email address" />
                         <button>Send</button>
