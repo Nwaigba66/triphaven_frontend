@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../../config/index.js";
 
 
 
@@ -14,6 +15,9 @@ export const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+    //this variable is for the dynamic connection to the server
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+    console.log("testing my .env", `$/{API_URL}/auth/signup`);
     const nav = useNavigate();
 
 
@@ -46,7 +50,8 @@ export const Signup = () => {
 
         // const userToCreate = { userName, email, password };
         try {
-            const response = await axios.post("http://localhost:3000/auth/signup", formData, newUser);
+            const response = await axios.post(`$/{API_URL}/auth/signup`,
+             formData, newUser);
             console.log("You created a user", response.data);
             
             //this code allows new users navigate to the login page after creating a user account
@@ -55,17 +60,13 @@ export const Signup = () => {
         } catch(err) {
             console.log("you've experienced an error signing up", err);
             setError(err.response.data.errorMessage);
-        }
-       
+        }   
     };
 
 
     return (
         <>
-        <div className="container">
-            <div className="left-image">
-                {/* <img src={logo} alt="logo" /> */}
-            </div>
+        <div className="sign-container">
           <h2 className="signup-title">Signup Here</h2>
           <form onSubmit={handleSignup}>
           <div className="form-group">
@@ -90,7 +91,7 @@ export const Signup = () => {
                 </label>
                 <input 
                 type="text" 
-                value={firstName} onChange={(event) => setFirstName(event.target.value)}
+                value={firstName} placeholder="FirstName" onChange={(event) => setFirstName(event.target.value)}
                 />   
             
             </div>
@@ -98,7 +99,7 @@ export const Signup = () => {
                 <label>
                 LastName:
                 </label>
-                <input type="text" value={lastName} onChange={(event) => setLastName(event.target.value)}
+                <input type="text" placeholder="LastName" value={lastName} onChange={(event) => setLastName(event.target.value)}
                 />
             
             </div>
@@ -106,7 +107,7 @@ export const Signup = () => {
                 <label>
                 UserName:
                 </label>
-                <input type="text" value={userName} onChange={(event) => setUserName(event.target.value)}
+                <input type="text" placeholder="UserName" value={userName} onChange={(event) => setUserName(event.target.value)}
                 />
             
             </div>
@@ -114,7 +115,7 @@ export const Signup = () => {
                 <label>
                 Email:
                 </label>
-                <input type="text" value={email} onChange={(event) => setEmail(event.target.value)}
+                <input type="text" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)}
                 />
             
             </div>
@@ -122,7 +123,7 @@ export const Signup = () => {
                 <label>
                 Password:
                 </label>
-                <input type="text" value={password} onChange={(event) => setPassword(event.target.value)}
+                <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}
                 />
             
             </div>

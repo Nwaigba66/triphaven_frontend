@@ -12,7 +12,7 @@ export const DashboardPage = () => {
    useEffect(() => {
     const getRooms = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/home/allhomes");
+            const response = await axios.get(`http://$/{API_URL}/home/allhomes`);
             console.log(response.data)
             setRooms(response.data)
         } catch (err) {
@@ -29,14 +29,14 @@ export const DashboardPage = () => {
         {rooms.map((Room) => (
         <Link to={`/dashboard/${Room._id}`}>
            <img src={Room.imageUrl} alt="image" width={400} height={400}/>
-          <div key={Room._id}>
-          <p>{Room.guest}</p>
-            <p>{Room.name}</p>
-          <p>{Room.city}</p>
-          <p>{Room.state}</p>
-          <p>{Room.country}</p>
-          <p>{Room.availabeUnits}</p>
-          <p>{Room.rating}</p>
+          <div  className="room" key={Room._id}>
+          <p className="guest">{Room.guest}</p>
+            <p className="guest">{Room.name}</p>
+          <p className="guest">{Room.city}</p>
+          <p className="guest">{Room.state}</p>
+          <p className="guest">{Room.country}</p>
+          <p className="guest">{Room.availabeUnits}</p>
+          <p className="guest">{Room.rating}</p>
           </div> 
           </Link>
         ))}

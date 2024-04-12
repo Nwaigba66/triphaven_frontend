@@ -1,32 +1,51 @@
+.login-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  /* padding: 20px; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  align-content: center;
+ 
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
 .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .form-group label {
-    flex: 0 0 150px;
-    text-align: left;
-    margin-right: 15px;
-    color: #001524;
-  }
-  
-  .form-input,
-  .form-select,
-  .form-textarea {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #001524;
-  }
-  
-  .form-select {
-    max-width: 200px; /* Adjust as needed */
-    color: #001524;
-  }
-  
-  .form-textarea {
-    resize: vertical;
-    height: 100px; /* Adjust as needed */
-  }
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  /* display: block; */
+  margin-bottom: 5px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="userName"],
+.form-group input[type="password"] {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  align-content: center;
+}
+
+.login {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login:hover {
+  background-color: #0056b3;
+}
+

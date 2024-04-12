@@ -1,44 +1,63 @@
 
+.sign-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  align-content: center;
+}
+
+.signup-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 8px;
+}
+
+.btn {
+  text-align: center;
+}
+
+.btn button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
   
-  .form-group label {
-    flex: 0 0 150px;
-    text-align: left;
-    margin-right: 15px;
-    color: #001524;
-  }
-  
-  .form-input,
-  .form-select,
-  .form-textarea {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #001524;
-  }
-  
-  .form-select {
-    max-width: 200px; /* Adjust as needed */
-    color: #001524;
-  }
-  
-  .form-textarea {
-    resize: vertical;
-    height: 100px; /* Adjust as needed */
-  }
-  .signup-title {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .container {
-    border-radius: 25px; 
-  }
-  .btn{
-    display: flex;
-    align-items: center;
-    margin-top: 100px;
-  }

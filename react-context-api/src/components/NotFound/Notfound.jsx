@@ -5,7 +5,7 @@ export const NotFound = () => {
     <div className="not-found">
       <iframe
         src="https://miro.medium.com/v2/resize:fit:1400/1*zE2qnVTJehut7B8P2aMn3A.gif"
-        width="480"
+        width="590"
         height="400"
         frameBorder="0"
         className="404"

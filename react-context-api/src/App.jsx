@@ -9,11 +9,19 @@ import  DetailPage  from "./components/DetailPage/DetailPage";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Footer } from "./components/Footer/Footer";
 import { NotFound } from "./components/NotFound/Notfound";
-import Review from "./components/Review/Review";
+import {Review }from "./components/Review/Review";
 import { Booking } from "./components/Booking/Booking";
 import "./components/Footer/Footer.css";
-
-
+import "./components/NavBar/NavBar.css";
+import "./components/Login/Login.css";
+import "./components/Signup/Signup.css";
+import "./components/Booking/Booking.css";
+import "./components/Dashboard/Dashboard.css";
+import { About } from "./components/About/About";
+import "./components/About/About.css";
+import { UpdateForm } from "./components/DetailPage/UpdateForm";
+import "./components/DetailPage/Update.css";
+import "./components/Review/review.css";
 
 
 
@@ -37,6 +45,9 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/review" element={<Review />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/update" element={<UpdateForm />} />
+
         </Routes> 
         <Footer />
     </>

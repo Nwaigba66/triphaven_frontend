@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Booking = () => {
+export const Booking = ({Booking}) => {
   const [booking, setBooking] = useState("");
   const [confirmationId, setConfirmationId,] = useState("");
   const [contact, setContact] = useState("");
@@ -29,15 +29,19 @@ export const Booking = () => {
       
 
         try {
-            const response = await axios.post("http://localhost:3000/booking/bookingId", newBooking);
+            const response = await axios.get(`http://$/{API_URL}/booking/booking`, newBooking);
+            if(response.status === 200 ){
+              setBooking(response.data);
+            }
             console.log("You created a new booking", response.data);
+
             
             //this code allows new users navigate to the login page after creating a user account
-            nav("/payment");
+            nav("/login");
 
         } catch(err) {
             console.log("Error creating booking", err);
-            setError(err.response.data.errorMessage);
+            setError(err.response.data.error);
         }
        
     };
@@ -67,7 +71,7 @@ export const Booking = () => {
                 <option value="hotel5">Stylish Loft in Munich City Center”,</option>
                 <option value="hotel5">Bright Studio Apartment near Marienplatz</option>
                 <option value="hotel5">Manuel Studio Apartment near Karlsplatz</option>
-                <option value="hotel5">Hofman’s Studio Apartment near Marienplatz</option>
+                <option value="hotel5">Hofmans Studio Apartment near Marienplatz</option>
                 </select>
               </div>
             <div className="booking-group">
@@ -109,27 +113,12 @@ export const Booking = () => {
                 <input type="file" name="image" />
               </div> 
         
-              <div className="booking-group">
-              <select 
-                id="card" 
-                value={card} 
-                onChange={(event) => setCard(event.target.value)} 
-                > 
-               <option value="">Master Card</option>
-               <option value="">Visa Card</option>
-               <option value="">American Express</option>
-               <option value="">Carte Aurore</option>
-               <option value="">Maestro</option> 
-              </select>
-              <input type="text" name="payment.card.cardNumber"   placeholder="Card Number                            |                cvv " 
-              onChange={handleSubmit} />
-              <input type="text" name="payment.card.expiryDate" placeholder="Expiry Date (YYYY-MM)" onChange={handleSubmit} />
               <button type="submit">Submit Booking</button>
-              </div>
+              
               </form>
               {error ? <h4 className="error-message">{error}</h4> : null}
              
-              </>
+              </>  
       );
     };
 

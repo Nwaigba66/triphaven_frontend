@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+ 
 
 export const NavBar = () => {
     const [activeTab, setActiveTab] = useState("Signup");
@@ -15,33 +16,52 @@ export const NavBar = () => {
         console.log(`isLoggedIn: ${isLoggedIn}`);
     }
 
-    const handleSignup = () => {
+    // const handleChange = () => {
+    //     setIsSignedUp(true);
+    //     console.log(`isSignedUp: ${isSignedUp}`);
+    // }
+    const handleSubmit = () => {
         setIsSignedUp(true);
         console.log(`isSignedUp: ${isSignedUp}`);
     }
 
     return (
-        <div className="navbar-container">
+        <div className="nav-container">
             <Link to="/">
-                <div>
-                    {/* <img src="{}" alt="Logo"/> */}
-                </div>
+              
             </Link>
             <nav>
                 <ul>
-                    <button className={activeTab === "Signup" ? "active" : ""} onClick={()=> handleTabClick("Signup")}>
-                        <Link to="/home">Home</Link>
-                    </button>
-                    <button className={activeTab === "about" ? "active" : ""}  onClick={()=> handleTabClick("about")}>
-                        <Link to="/about">About</Link>
-                    </button>
+                
+          
+                    
+                    <li className={activeTab === "home" ? "active" : ""} 
+                    onClick={()=> handleTabClick("home")}
+                    >   
+                    <Link to="/home">Home </Link> 
+                    </li>
 
-                    {!isLoggedIn ? (
+                    <li className={activeTab === "about" ? "active" : ""}  onClick={()=> handleTabClick("about")}>
+                    <Link to="/about">About </Link> 
+                    </li>
+                   
+
+                   
+                    <button className={activeTab === "Signup" ? "active" : ""} Link to="/" onClick={()=> handleTabClick("Signup")}>Signup
+        
+                    </button>
+                  
+                
+                    <button className={activeTab === "Login" ? "active" : ""} Link to="/Login"  onClick={()=> handleTabClick("login")}>Login
+                       
+                    </button>
+                
+                    {isLoggedIn ? (
                         <>
-                            <button Link to="/Login" className="login-button" onClick={handleLogin}>
+                            <button  className="login-button" onClick={handleLogin}>
                                 Login
                             </button>
-                            <button Link to="/" className="signup-button" onClick={handleSignup}>
+                            <button  className="signup-button" onClick={handleSubmit}>
                                 Sign Up
                             </button>
         

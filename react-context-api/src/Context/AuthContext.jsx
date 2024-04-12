@@ -18,7 +18,7 @@ const AuthWrapper = ({ children}) => {
         if (Token) {
             try {
                 //this is if there is a token then we need to verify it
-                const response = await axios("http://localhost:3000/auth/verify", {
+                const response = await axios(`http://$/{API_URL}/auth/verify`, {
                     headers: {
                         authorization: `Bearer ${Token}`,
                     },

@@ -1,41 +1,12 @@
-/* Page Container */
-.page-container {
-    padding: 20px;
+.box {
+    align-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    
   }
-  
-  /* Heading */
-  .page-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  .guest{
+    font-size: medium;
+    color: black;
   }
-  
-  /* Room Box */
-  .room-box {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .room-box img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .room-box p {
-    margin: 5px 0;
-  }
-  
-  /* Link Styling */
-  .room-box a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .room-box a:hover {
-    text-decoration: underline;
-  }
-  
