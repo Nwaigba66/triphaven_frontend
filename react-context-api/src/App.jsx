@@ -20,7 +20,8 @@ import "./components/Dashboard/Dashboard.css";
 import { About } from "./components/About/About";
 import "./components/About/About.css";
 import { UpdateForm } from "./components/DetailPage/UpdateForm";
-import "./components/DetailPage/Update.css";
+
+import "./components/DetailPage/detail.css";
 import "./components/Review/review.css";
 
 
@@ -30,13 +31,13 @@ function App() {
 
   const {user, setUser} = useContext(AuthContext);
  
-
   return (
     <>
     <NavBar />
     <Routes>
       <Route path="/" element={<Signup />} />
       <Route path="/Login" element={<Login />} />
+      <Route path="/Signup" element={<Signup />} />
       <Route
           path="/home"
           element={<DashboardPage  />}/>

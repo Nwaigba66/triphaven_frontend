@@ -29,7 +29,7 @@ export const Login = () => {
             nav('/home'); 
         } catch (err) {
             console.log("Error occurred while signing up", err);
-            setError(err.response.data.errorMessage);
+            setError(err);
         }   
     }
 

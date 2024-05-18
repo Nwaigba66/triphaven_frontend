@@ -32,9 +32,7 @@ export const NavBar = () => {
             </Link>
             <nav>
                 <ul>
-                
-          
-                    
+                 
                     <li className={activeTab === "home" ? "active" : ""} 
                     onClick={()=> handleTabClick("home")}
                     >   

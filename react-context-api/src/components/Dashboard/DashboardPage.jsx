@@ -12,7 +12,7 @@ export const DashboardPage = () => {
    useEffect(() => {
     const getRooms = async () => {
         try {
-            const response = await axios.get(`http://$/{API_URL}/home/allhomes`);
+            const response = await axios.get("http://localhost:3000/home/allhomes");
             console.log(response.data)
             setRooms(response.data)
         } catch (err) {

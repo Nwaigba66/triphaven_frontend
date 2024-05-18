@@ -29,7 +29,7 @@ export const Booking = ({Booking}) => {
       
 
         try {
-            const response = await axios.get(`http://$/{API_URL}/booking/booking`, newBooking);
+            const response = await axios.get("http://$/localhost:3000/booking/booking", newBooking);
             if(response.status === 200 ){
               setBooking(response.data);
             }

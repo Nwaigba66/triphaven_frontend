@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 //code to create the context
 const AuthContext = createContext();
+const API_URL=import.meta.env.API_URL || "http://localhost3000";
 
 //the wrapper that will wrap my app
 const AuthWrapper = ({ children}) => {
@@ -18,7 +19,7 @@ const AuthWrapper = ({ children}) => {
         if (Token) {
             try {
                 //this is if there is a token then we need to verify it
-                const response = await axios(`http://$/{API_URL}/auth/verify`, {
+                const response = await axios(`http://${API_URL}/auth/verify`, {
                     headers: {
                         authorization: `Bearer ${Token}`,
                     },
@@ -29,7 +30,7 @@ const AuthWrapper = ({ children}) => {
                 setLoggedIn(true);   
 
             } catch (err) {
-                console.log(errormessage, "There was an error authenticating the user", err);
+                console.log("There was an error authenticating the user", err);
                 setUser(null);
                 setLoading(false);
                 setLoggedIn(false);

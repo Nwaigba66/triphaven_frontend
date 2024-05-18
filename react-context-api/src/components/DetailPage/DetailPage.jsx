@@ -11,7 +11,7 @@ const DetailPage = () => {
     useEffect(() => {
         const getOneRoom = async () => {
             try {
-                const response = await axios(`http://$/{API_URL}/home/${roomId}`);
+                const response = await axios(`http://localhost:3000/home/${roomId}`);
                 console.log(response.data);
                 setRoom(response.data);
             } catch (err) {
@@ -27,6 +27,7 @@ const DetailPage = () => {
 
     return (
         <>
+        <div className="detail-container">
             <h2 className="title">Room Information</h2>
 
             <img src={room.imageUrl} alt="Room" width={500} height={500} />
@@ -43,7 +44,7 @@ const DetailPage = () => {
             <p>Longitude : {room.longitude}</p>
             <p>Ratings : {room.rating}</p>
             <p>Laundry : {room.laundry}</p>
-
+            </div>
             <div>
                 <Link to="/review" className="review">Leave a Review</Link>
                 <Link to="/booking">
@@ -51,15 +52,13 @@ const DetailPage = () => {
                 </Link>
             </div>
 
-            <div>
+            <div className="button-container">
                 <div>
                     <Link to="/update">
-                    <button>Update Room</button>
+                    <button className="button">Update Room</button>
                     </Link>
                 </div>
-                <div>
-                    <button>Delete Room</button>
-                </div>
+               
                 <div>
                     <button onClick={() => navigate("/")}>Return Home</button>
                 </div>
