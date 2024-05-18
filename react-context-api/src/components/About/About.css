@@ -129,3 +129,16 @@
     margin-top: 100px;
     text-align: justify;
   }
+  .para-text {
+    color: black;
+    font-size: large;
+  }
+  .welcome-text {
+    color: black;
+    font-size:x-large;
+  }
+  .thanks-text {
+    color: black;
+    font-size:x-large;
+    text-align: center;
+  }

@@ -67,5 +67,9 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  .label_title {
+    color: black;
+    font-size: larger;
+  }
   
  

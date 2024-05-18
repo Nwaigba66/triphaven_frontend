@@ -40,7 +40,7 @@ export const Review = () => {
             <div className="review-box"></div>
             <form onSubmit={handleSubmit}>
                 <div className="booking-group">
-                    <label>
+                    <label className="label_title">
                         Hotel Name:
                     </label>
                     <select
@@ -62,7 +62,7 @@ export const Review = () => {
                         <option value="hotel10">Hofmans Studio Apartment near Marienplatz</option>
                     </select>
                 </div>
-                <label>
+                <label className="label_title">
                     Rating:
                     <select value={rating} onChange={(e) => setRating(e.target.value)} required>
                         <option value="">Select Rating</option>
