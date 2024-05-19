@@ -1,70 +1,76 @@
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
-  
-  .container {
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .room {
-    width: 300px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    align-items: center;
-  }
-  
-  .room img {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  
-  .room-details {
-    padding: 20px;
-  }
-  
-  .room-details p {
-    margin: 5px 0;
-    align-items: center;
-  }
-  
-  .room-details .guest {
-    font-weight: bold;
-  }
-  
-  .room-details .rating {
-    color: #ff9800; /* Orange color */
-  }
-  
-  /* Link styles */
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  .guest{
-    color:black;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.room {
+  width: 300px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex; /* Added to make the image and details align vertically */
+  flex-direction: column; /* Added to make the image and details stack vertically */
+  align-items: center; /* Added to center the content horizontally */
+}
+
+.room img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.room-details {
+  padding: 20px;
+  text-align: center; /* Added to center the text */
+}
+
+.room-details p {
+  margin: 5px 0;
+}
+
+.room-details .guest {
+  font-weight: bold;
+}
+
+.room-details .rating {
+  color: #ff9800; /* Orange color */
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.guest {
+  color: black;
+}
+.container {
+  max-width: fit-content;
+}
