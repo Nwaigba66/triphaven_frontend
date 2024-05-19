@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import {Link, useNavigate} from 'react-router-dom';
 
 
-
 export const DashboardPage = () => {
     // const [searchterm, setSearchTerm] = useState("");
     const [rooms, setRooms] = useState([]);
@@ -12,7 +11,7 @@ export const DashboardPage = () => {
    useEffect(() => {
     const getRooms = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/home/allhomes");
+            const response = await axios.get(`{API_URL}/home/allhomes`);
             console.log(response.data)
             setRooms(response.data)
         } catch (err) {

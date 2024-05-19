@@ -18,7 +18,7 @@ export const Login = () => {
 
         const userLogin = { email, userName, password };
         try {
-            const response = await axios.post("http://localhost:3000/auth/login", userLogin);
+            const response = await axios.post(`{API_URL}/auth/login`, userLogin);
             console.log("You are logged in", response.data);
 
             // Store the authToken from the server in local storage if login is successful

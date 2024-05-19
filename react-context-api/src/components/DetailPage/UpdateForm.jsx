@@ -26,7 +26,7 @@ export const UpdateForm = () => {
       useEffect(() => {
         const getUpdateProduct = async () => {
           try {
-            const response = await axios.get("http://localhost:3000/room/${roomId}");
+            const response = await axios.get(`{API_URL}/room/${roomId}`);
             const updatedRoom = response.data;
     
             setRoom(updatedRoom.room);
@@ -72,7 +72,7 @@ export const UpdateForm = () => {
         };
     
         try {
-          const response = await axios.put("http://localhost:3000/room/${roomId}", roomData);
+          const response = await axios.put(`{API_URL}/room/${roomId}`, roomData);
           console.log("Room updated successfully:", response.data);
           nav(`/home/${roomId}`);
         } catch (error) {

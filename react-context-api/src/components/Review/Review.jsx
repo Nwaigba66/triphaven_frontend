@@ -15,7 +15,7 @@ export const Review = () => {
 
         try {
             const newRating = { homeId: home, rating, comment };
-            const response = await axios.get("http://localhost:3000/review/{:reviewId}", newRating);
+            const response = await axios.get(`{API_URL}/review/{:reviewId}`, newRating);
             console.log("You created a new Rating", response.data);
 
             if (response.status === 200) {

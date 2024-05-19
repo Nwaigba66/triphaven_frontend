@@ -45,7 +45,7 @@ export const NavBar = () => {
                    
 
                    
-                    <button className={activeTab === "Signup" ? "active" : ""} Link to="/" onClick={()=> handleTabClick("Signup")}>Signup
+                    <button className={activeTab === "Signup" ? "active" : ""} Link to="/Signup" onClick={()=> handleTabClick("Signup")}>Signup
         
                     </button>
                   
@@ -56,10 +56,10 @@ export const NavBar = () => {
                 
                     {isLoggedIn ? (
                         <>
-                            <button  className="login-button" onClick={handleLogin}>
+                            <button  className="login-button" Link to="/Login" onClick={handleLogin}>
                                 Login
                             </button>
-                            <button  className="signup-button" onClick={handleSubmit}>
+                            <button  className="signup-button" Link to="/Signup" onClick={handleSubmit}>
                                 Sign Up
                             </button>
         

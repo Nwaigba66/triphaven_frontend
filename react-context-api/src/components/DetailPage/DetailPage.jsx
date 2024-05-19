@@ -11,7 +11,7 @@ const DetailPage = () => {
     useEffect(() => {
         const getOneRoom = async () => {
             try {
-                const response = await axios(`http://localhost:3000/home/${roomId}`);
+                const response = await axios(`{API_URL}/home/${roomId}`);
                 console.log(response.data);
                 setRoom(response.data);
             } catch (err) {

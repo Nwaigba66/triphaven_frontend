@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { localhost } from "../../config/index.js";
+import { API_URL } from "../../config/index.js";
 
 
 export const Signup = () => {
@@ -12,6 +12,9 @@ export const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+
+    // const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+    console.log("testing my .env", `${API_URL}/auth/signup`);
     
     const nav = useNavigate();
 
@@ -45,8 +48,7 @@ export const Signup = () => {
 
         // const userToCreate = { userName, email, password };
         try {
-            const response = await axios.post("http://localhost:3000/auth/signup",
-             formData, newUser);
+            const response = await axios.post(`${API_URL}/auth/signup`, formData, newUser);
             console.log("You created a user", response.data);
             
             //this code allows new users navigate to the login page after creating a user account
