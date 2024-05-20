@@ -11,16 +11,15 @@ import { Footer } from "./components/Footer/Footer";
 import { NotFound } from "./components/NotFound/Notfound";
 import {Review }from "./components/Review/Review";
 import { Booking } from "./components/Booking/Booking";
+import { About } from "./components/About/About";
+import { UpdateForm } from "./components/DetailPage/UpdateForm";
 import "./components/Footer/Footer.css";
 import "./components/NavBar/NavBar.css";
 import "./components/Login/Login.css";
 import "./components/Signup/Signup.css";
 import "./components/Booking/Booking.css";
 import "./components/Dashboard/Dashboard.css";
-import { About } from "./components/About/About";
 import "./components/About/About.css";
-import { UpdateForm } from "./components/DetailPage/UpdateForm";
-
 import "./components/DetailPage/detail.css";
 import "./components/Review/review.css";
 

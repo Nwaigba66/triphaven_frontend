@@ -25,12 +25,12 @@ h1 {
 .room {
   width: 300px;
   margin: 20px;
-  background-color: #fff;
+  background-color: red;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex; /* Added to make the image and details align vertically */
-  flex-direction: column; /* Added to make the image and details stack vertically */
+  flex-direction: row; /* Added to make the image and details stack vertically */
   align-items: center; /* Added to center the content horizontally */
 }
 

@@ -18,11 +18,12 @@ export const DashboardPage = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div>
             <h1>Triphaven Exclusive Airbnb</h1>
-            <div className="box">
-                {rooms.map((room) => (
-                    <Link to={`/dashboard/${room._id}`} key={room._id}>
+            
+                {rooms.map((room) => {
+                    return (
+                        <Link  key={room._id} to={`/dashboard/${room._id}`} >
                         <div className="room">
                             <img src={room.imageUrl} alt={room.name} width={400} height={400} />
                             <p className="guest">{room.guest}</p>
@@ -34,8 +35,11 @@ export const DashboardPage = () => {
                             <p className="guest">{room.rating}</p>
                         </div>
                     </Link>
-                ))}
+                    )
+                }
+                   
+                )}
             </div>
-        </div>
+       
     );
 };
