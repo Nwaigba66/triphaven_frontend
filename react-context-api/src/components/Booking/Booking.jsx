@@ -117,7 +117,7 @@ export const Booking = ({Booking}) => {
               
               </form>
               {error ? <h4 className="error-message">{error}</h4> : null}
-             
+            
               </>  
       );
     };
