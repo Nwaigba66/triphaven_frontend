@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../config/index.js";
+import logo from "../../assets/logo.jpg";
 
 
 export const Signup = () => {
@@ -13,7 +14,8 @@ export const Signup = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
 
-    // const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+
     console.log("testing my .env", `${API_URL}/auth/signup`);
     
     const nav = useNavigate();
@@ -63,8 +65,9 @@ export const Signup = () => {
 
     return (
         <>
+        <div className="first-container">
         <div className="sign-container">
-          <h2 className="signup-title">Signup Here</h2>
+          <h2 className="signup-title"><strong>Signup Here</strong></h2>
           <form onSubmit={handleSignup}>
           <div className="form-group">
             <label>Title:</label>
@@ -137,6 +140,12 @@ export const Signup = () => {
           </form>
           {error ? <h4 className="error-message">{error}</h4> : null}
         </div>
+       
+       
+        <img src={logo} alt="signup-logo" className="logo"/>
+        </div>
+       
+        
         </>
       )
     }

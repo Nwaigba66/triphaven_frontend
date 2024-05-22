@@ -1,27 +1,30 @@
 
 .sign-container {
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
-  align-content: center;
+  
 }
 
 .signup-title {
   text-align: center;
   margin-bottom: 20px;
+  color: red;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .form-group {
   margin-bottom: 15px;
+  
 }
 
 .form-group label {
-  display: block;
+  /* display: block; */
   margin-bottom: 5px;
+  color: black
 }
 
 .form-group input[type="text"],
@@ -43,12 +46,17 @@
 
 .btn button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: red;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
+.first-container {
+  display: flex;
+  margin-left: 50px;
+}
+
 
 .btn button:hover {
   background-color: #0056b3;
@@ -60,4 +68,8 @@
   margin-top: 10px;
 }
 
+.logo {
+  width: 35%;
+  margin-left: 10%;  
+}
   

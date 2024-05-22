@@ -4,6 +4,8 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [userName, setUserName] = useState("");
@@ -35,13 +37,14 @@ export const Login = () => {
 
     return (
         <div className="login-container">
-            <h2>Login</h2>
+            <h2 className="signup-title">Login</h2>
             <form onSubmit={handleLogin}>
                 <div className="form-group">
                     <label>Email:</label>
                     <input
                         type="email"
                         value={email}
+                        placeholder="Email"
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
@@ -51,6 +54,7 @@ export const Login = () => {
                     <input
                         type="text"
                         value={userName}
+                        placeholder="userName"
                         onChange={(e) => setUserName(e.target.value)}
                         required
                     />
@@ -60,11 +64,12 @@ export const Login = () => {
                     <input
                         type="password"
                         value={password}
+                        placeholder="password"
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
-                <button type="submit" className="login">
+                <button className="btn" type="submit" >
                     Login
                 </button>
             </form>

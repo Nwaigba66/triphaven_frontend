@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+
 const DetailPage = () => {
     const navigate = useNavigate();
     const [room, setRoom] = useState(null);
@@ -45,23 +47,26 @@ const DetailPage = () => {
             <p>Ratings : {room.rating}</p>
             <p>Laundry : {room.laundry}</p>
             </div>
-            <div>
-                <Link to="/review" className="review">Leave a Review</Link>
-                <Link to="/booking">
-                    <button className="booking">Make a Booking</button>
-                </Link>
-            </div>
+         
 
             <div className="button-container">
                 <div>
                     <Link to="/update">
                     <button className="button">Update Room</button>
                     </Link>
-                </div>
+                   
+                    <Link to="/review">
+                    <button className="button">Leave a Review</button>
+                    </Link>
+
+                    <Link to="/booking">
+                    <button className="button">Make a Booking</button>
+                    </Link>
+
+                    <button className="button" onClick={() => navigate("/")}>Return Home</button>
+                    </div>
                
-                <div>
-                    <button onClick={() => navigate("/")}>Return Home</button>
-                </div>
+              
             </div>
         </>
     );

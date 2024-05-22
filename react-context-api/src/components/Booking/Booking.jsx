@@ -2,7 +2,10 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+
 export const Booking = ({Booking}) => {
+  const { user } = useContext(AuthContext);
   const [booking, setBooking] = useState("");
   const [confirmationId, setConfirmationId,] = useState("");
   const [contact, setContact] = useState("");
@@ -45,6 +48,11 @@ export const Booking = ({Booking}) => {
         }
        
     };
+    function handleDelete() {
+      axios
+        .delete(`${API_URL}/booking/${bookingId}`)
+        .then(() => navigate(`/booking`));
+    }
 
 
     return (

@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: black;
 }
 
 .container {
@@ -23,20 +23,19 @@ h1 {
 .box {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
 }
 
 .room {
-  width: 300px;
+  width: 350px;
   margin: 20px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(152, 8, 8, 0.1);
   overflow: hidden;
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  display: flex row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .room img {
@@ -49,7 +48,8 @@ h1 {
 
 .room-details {
   padding: 20px;
-  text-align: center; /* Added to center the text */
+  text-align: center;
+  width: 100%;
 }
 
 .room-details p {
@@ -61,7 +61,7 @@ h1 {
 }
 
 .room-details .rating {
-  color: #ff9800; /* Orange color */
+  color: #ff9800;
 }
 
 /* Link styles */
@@ -77,6 +77,7 @@ a:hover {
 .guest {
   color: black;
 }
+
 .container {
   max-width: fit-content;
 }
@@ -90,9 +91,10 @@ a:hover {
   font-size: 2em;
 }
 
-/*filter section*/
+/* Filter section */
 .filter-section {
   margin-top: 20px;
+ margin-left: 300px;
 }
 
 .filter-section h2 {
@@ -120,4 +122,16 @@ a:hover {
 .filter-section input[type="text"]:focus {
   outline: none;
   border-color: #2b7775;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .box {
+    justify-content: center;
+  }
+
+  .room {
+    width: 100%;
+    max-width: 400px;
+  }
 }

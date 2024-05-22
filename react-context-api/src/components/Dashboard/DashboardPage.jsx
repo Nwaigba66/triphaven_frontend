@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+
 
 export const DashboardPage = () => {
     const [rooms, setRooms] = useState([]);
@@ -16,7 +18,7 @@ export const DashboardPage = () => {
     useEffect(() => {
         const getRooms = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/home/allhomes");
+                const response = await axios.get(`{API_URL}/home/allhomes`);
                 setRooms(response.data);
                 filterRooms(response.data);
             } catch (err) {
@@ -66,8 +68,9 @@ export const DashboardPage = () => {
 
     return (
         <>
-            <div className="filter-section">
+           <div className="filter-section">
                 <h1 id="filter">Triphaven Exclusive Airbnb</h1>
+                
                 <select value={homeFilter} onChange={(e) => setHomeFilter(e.target.value)}>
                     <option value="">Select</option>
                     <option value="Warm Beds Housing Support">Warm Beds Housing Support</option>
@@ -117,7 +120,7 @@ export const DashboardPage = () => {
                     <Link key={room._id} to={`/dashboard/${room._id}`}>
                         <div className="room">
                             <img src={room.imageUrl} alt={room.name} width={400} height={400} />
-                            <p className="guest">Guest: {room.guest}</p>
+                            <p className="guest"> <strong>Guest: {room.guest}</strong></p>
                             <p className="guest">Apartment Name: {room.name}</p>
                             <p className="guest">City: {room.city}</p>
                             <p className="guest">State: {room.state}</p>

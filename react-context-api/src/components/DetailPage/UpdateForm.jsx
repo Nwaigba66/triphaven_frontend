@@ -19,6 +19,8 @@ export const UpdateForm = () => {
     const [laundry, setLaundry] = useState("");
     const [error, setError] = useState(null);
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+
     const { roomId } = useParams();
     const nav = useNavigate();
 
