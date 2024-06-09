@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import { NavBar } from "../NavBar/NavBar";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
@@ -18,7 +19,7 @@ export const DashboardPage = () => {
     useEffect(() => {
         const getRooms = async () => {
             try {
-                const response = await axios.get(`{API_URL}/home/allhomes`);
+                const response = await axios.get("${API_URL}/home/allhomes");
                 setRooms(response.data);
                 filterRooms(response.data);
             } catch (err) {
@@ -59,12 +60,7 @@ export const DashboardPage = () => {
         filterRooms(rooms);
     }, [cityFilter, countryFilter, homeFilter, searchQuery]);
 
-    // Pagination logic
-    // const indexOfLastItem = currentPage * itemsPerPage;
-    // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    // const currentItems = filteredRooms.slice(indexOfFirstItem, indexOfLastItem);
-
-    // const paginate = (pageNumber) => setCurrentPage(pageNumber);
+   
 
     return (
         <>
@@ -118,7 +114,7 @@ export const DashboardPage = () => {
             {filteredRooms.length > 0 ? (
                 filteredRooms.map((room) => (
                     <Link key={room._id} to={`/dashboard/${room._id}`}>
-                        <div className="room">
+                        <div className="dashboard-page">
                             <img src={room.imageUrl} alt={room.name} width={400} height={400} />
                             <p className="guest"> <strong>Guest: {room.guest}</strong></p>
                             <p className="guest">Apartment Name: {room.name}</p>
@@ -134,22 +130,7 @@ export const DashboardPage = () => {
                 <p>No rooms found.</p>
             )}
 
-              {/* Pagination controls  */}
-             {/* <div className="pagination">
-                <button
-                    disabled={currentPage === 1}
-                    onClick={() => paginate(currentPage - 1)}
-                >
-                    Previous
-                </button>
-                <span>Page {currentPage}</span>
-                <button
-                    disabled={indexOfLastItem >= filteredRooms.length}
-                    onClick={() => paginate(currentPage + 1)}
-                >
-                    Next
-                </button>
-            </div> */}
+              
         </>
     );
 };

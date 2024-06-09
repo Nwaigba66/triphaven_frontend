@@ -1,23 +1,34 @@
 /* Global styles */
+.nav-container {
+  position: static;
+  bottom: 0;
+  right: 0px;
+  background-color: white;
+  color: black;
+ 
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: black;
+
 }
 
 .container {
-  width: 90%;
+ 
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
+  justify-content: center;
+ 
 }
 
 h1 {
   text-align: center;
   margin-top: 30px;
+  color: red;
 }
 
 .box {
@@ -26,41 +37,50 @@ h1 {
   justify-content: center;
 }
 
-.room {
-  width: 350px;
+#dashboard-page {
+  align-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-items: center
+}
+.home {
+  max-width: 400px;
   margin: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(152, 8, 8, 0.1);
   overflow: hidden;
   display: flex row;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.room img {
+.home img {
   width: 100%;
   height: auto;
   display: block;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
 }
 
-.room-details {
+.home-details {
   padding: 20px;
   text-align: center;
   width: 100%;
+ 
 }
 
-.room-details p {
+.home-details p {
   margin: 5px 0;
 }
 
-.room-details .guest {
+.home-details .guest {
   font-weight: bold;
 }
 
-.room-details .rating {
+.home-details .rating {
   color: #ff9800;
 }
 
@@ -97,10 +117,10 @@ a:hover {
  margin-left: 300px;
 }
 
-.filter-section h2 {
+/* .filter-section h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-}
+} */
 
 .filter-section select,
 .filter-section input[type="text"] {
@@ -128,10 +148,5 @@ a:hover {
 @media (max-width: 768px) {
   .box {
     justify-content: center;
-  }
-
-  .room {
-    width: 100%;
-    max-width: 400px;
   }
 }

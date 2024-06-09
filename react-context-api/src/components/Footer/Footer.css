@@ -37,19 +37,19 @@ h3 a:hover {
   margin-left: 60px;
 } */
 
-/* Footer CSS */
+
 .footer-container {
   position: static;
   bottom: 0;
   right: 0px;
-  background-color: rgb(56, 217, 150);
+  background-color: #cccccc;
   color: black;
-  padding-right: 15px;
+ 
 }
 
 .contact {
   display: flex; 
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 

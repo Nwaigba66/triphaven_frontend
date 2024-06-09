@@ -1,75 +1,22 @@
 
-.sign-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  .signin-container {
+    height: 700px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0d6e6;
+    align-items: center;
+  }
+  .title {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+  }
   
-}
-
-.signup-title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: red;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.form-group {
-  margin-bottom: 15px;
   
-}
-
-.form-group label {
-  /* display: block; */
-  margin-bottom: 5px;
-  color: black
-}
-
-.form-group input[type="text"],
-.form-group select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form-group input[type="file"] {
-  width: 100%;
-  padding: 8px;
-}
-
-.btn {
-  text-align: center;
-}
-
-.btn button {
-  padding: 10px 20px;
-  background-color: red;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.first-container {
-  display: flex;
-  margin-left: 50px;
-}
-
-
-.btn button:hover {
-  background-color: #0056b3;
-}
-
-.error-message {
-  color: red;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.logo {
-  width: 35%;
-  margin-left: 10%;  
-}
+  
+  
+  
+  
+  
   

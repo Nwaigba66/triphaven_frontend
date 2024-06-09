@@ -1,0 +1,17 @@
+.text {
+    text-align: justify;
+    font-size: 18px;
+    color: black;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+  .privacypolicy {
+    color: red;
+    font-size: x-large;
+    text-align: center;
+  }
+  .big-title {
+    color: blue;
+    margin-left: 30px;
+  }

@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../config/index.js";
-import logo from "../../assets/logo.jpg";
+import { NavBar } from "../NavBar/NavBar.jsx";
+
 
 
 export const Signup = () => {
@@ -16,7 +17,7 @@ export const Signup = () => {
 
     const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
-    console.log("testing my .env", `${API_URL}/auth/signup`);
+    // console.log("testing my .env", `${API_URL}/auth/signup`);
     
     const nav = useNavigate();
 
@@ -50,7 +51,7 @@ export const Signup = () => {
 
         // const userToCreate = { userName, email, password };
         try {
-            const response = await axios.post(`${API_URL}/auth/signup`, formData, newUser);
+            const response = await axios.post(`{API_URL}/auth/signup`, formData, newUser);
             console.log("You created a user", response.data);
             
             //this code allows new users navigate to the login page after creating a user account
@@ -65,87 +66,73 @@ export const Signup = () => {
 
     return (
         <>
-        <div className="first-container">
-        <div className="sign-container">
-          <h2 className="signup-title"><strong>Signup Here</strong></h2>
-          <form onSubmit={handleSignup}>
-          <div className="form-group">
-            <label>Title:</label>
-              <select 
-                id="title" 
-                value={title} 
-                onChange={(event) => setTitle(event.target.value)} 
-                required
-              >   
-              <option value="">Select Title</option>
-              <option value="Mr">Mr</option>
-              <option value="Mrs">Mrs</option>
-              <option value="Ms">Ms</option>
-              <option value="Dr">Dr</option>
-              <option value="Prof">Prof</option>
-              </select>
-              </div>
-              <div className="form-group">
-                <label>
-                FirstName:
-                </label>
-                <input 
-                type="text" 
-                value={firstName} placeholder="FirstName" onChange={(event) => setFirstName(event.target.value)}
-                />   
-            
-            </div>
-            <div className="form-group">
-                <label>
-                LastName:
-                </label>
-                <input type="text" placeholder="LastName" value={lastName} onChange={(event) => setLastName(event.target.value)}
-                />
-            
-            </div>
-            <div className="form-group">
-                <label>
-                UserName:
-                </label>
-                <input type="text" placeholder="UserName" value={userName} onChange={(event) => setUserName(event.target.value)}
-                />
-            
-            </div>
-            <div className="form-group">
-                <label>
-                Email:
-                </label>
-                <input type="text" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)}
-                />
-            
-            </div>
-            <div className="form-group">
-                <label>
-                Password:
-                </label>
-                <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}
-                />
-            
-            </div>
-            <div className="form-group">
-                <label>
-                ProfileImage:
-                </label>
-            <input type="file" name="image" />
-           
-            </div>
-            <div className="btn"> 
-           <button>Sign Up</button>
-           </div>
-          </form>
-          {error ? <h4 className="error-message">{error}</h4> : null}
-        </div>
-       
-       
-        <img src={logo} alt="signup-logo" className="logo"/>
-        </div>
-       
-        
-        </>
-      )
-    }
+        <div className="signin-container">
+       <h2 className="title">Signup Here</h2>
+                <form onSubmit={handleSignup}>
+                <div className="form-group">
+                        <label>Title:</label>
+                        <select id="title" value={title} onChange={(event) => setTitle(event.target.value)} required>
+                            <option value="">Select Title</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Prof">Prof</option>
+                            </select>
+                </div>
+                            
+                <div className="form-group">
+                                <label>
+                                    FirstName:
+                                </label>
+                                <input 
+                                type="text" 
+                                value={firstName} placeholder="FirstName" onChange={(event) => setFirstName(event.target.value)} required
+                                />
+                     </div> 
+
+                     <div className="form-group">         
+                                <label>
+                                LastName:
+                                </label>
+                                <input type="text" placeholder="LastName" value={lastName} onChange={(event) => setLastName(event.target.value)} required
+                                />
+                     </div> 
+
+                     <div className="form-group">        
+                                <label>
+                                UserName:
+                                </label>
+                                <input type="text" placeholder="UserName" value={userName} onChange={(event) => setUserName(event.target.value)} required
+                                />
+                    </div>
+
+                    <div className="form-group">   
+                                <label>
+                                Email:
+                                </label>
+                                <input type="text" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required
+                                />
+                    </div>
+
+                    <div className="form-group">  
+                                <label>
+                                Password:
+                                </label>
+                                <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} required
+                                />
+                    </div>
+                    <div className="form-group"> 
+                                <label>
+                                ProfileImage:
+                                </label>
+                                <input type="file" name="image" />
+                    </div>
+                                <button className="btn">Sign Up</button>
+                                </form>
+                                {error ? <h4 className="error-message">{error}</h4> : null}
+                                </div>
+                                </>
+                                
+                                 );
+                                };

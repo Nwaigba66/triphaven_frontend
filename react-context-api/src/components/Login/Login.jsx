@@ -3,10 +3,11 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
+import { NavBar } from "../NavBar/NavBar";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
-export const Login = () => {
+export const Login = () => {s
     const [email, setEmail] = useState("");
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -20,7 +21,7 @@ export const Login = () => {
 
         const userLogin = { email, userName, password };
         try {
-            const response = await axios.post(`{API_URL}/auth/login`, userLogin);
+            const response = await axios.post(`${API_URL}/auth/login`, userLogin);
             console.log("You are logged in", response.data);
 
             // Store the authToken from the server in local storage if login is successful
@@ -37,7 +38,7 @@ export const Login = () => {
 
     return (
         <div className="login-container">
-            <h2 className="signup-title">Login</h2>
+            <h2 className="title">Login</h2>
             <form onSubmit={handleLogin}>
                 <div className="form-group">
                     <label>Email:</label>

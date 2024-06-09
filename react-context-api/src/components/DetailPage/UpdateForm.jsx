@@ -74,7 +74,7 @@ export const UpdateForm = () => {
         };
     
         try {
-          const response = await axios.put(`{API_URL}/room/${roomId}`, roomData);
+          const response = await axios.put(`${API_URL}/room/${roomId}`, roomData);
           console.log("Room updated successfully:", response.data);
           nav(`/home/${roomId}`);
         } catch (error) {
@@ -86,7 +86,7 @@ export const UpdateForm = () => {
       return (
         <div className="add-container">
           <div className="update-form">
-            <h2 className="info">Update Room Information</h2>
+            <h2 className="title">Update Room Information</h2>
 
             <div className="outer-form">
             <form onSubmit={handleUpdate}>
@@ -109,7 +109,7 @@ export const UpdateForm = () => {
 
           </div>
               <div className="form-group">
-                <label>Guest:</label>
+                <label className="label">Guest:</label>
                 <input
                   type="text"
                   value={guest}
@@ -136,6 +136,7 @@ export const UpdateForm = () => {
                   <option value="">Select country</option>
                   <option value="Germany">Germany</option>
                   <option value="USA">USA</option>
+                  <option value="USA">Nigeria</option>
                 </select>
               </div>
               {country === "Germany" && (
@@ -205,13 +206,14 @@ export const UpdateForm = () => {
                 />
               </div>
               <div className="form-group">
-                <label>Price Currency:</label>
+                <label>Price Currency:
                 <input
                   type="text"
                   value={priceCurrency}
                   onChange={(e) => setPriceCurrency(e.target.value)}
                   className="form-input"
                 />
+                </label>
               </div>
               <div className="form-group">
                 <label>Latitude:</label>
@@ -252,6 +254,5 @@ export const UpdateForm = () => {
       );
     };
     
-
 
 

@@ -1,11 +1,11 @@
-.review-box {
+/* .review-box {
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
     font-size: 18px;
-  }
+  } */
   
   .review-box::before {
     content: "Review";

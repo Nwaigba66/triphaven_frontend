@@ -1,36 +1,46 @@
-.nav-container{
-  /* width: 161%; */
-  background-color: rgb(56, 217, 150);
+.nav-container {
+  right: 0px;
+  background-color: white;
+  position: fixed;
   bottom: 0;
-  left: 0; 
-  position: static;
-  text-align: center;
-  padding: 20px 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 30px;
+ 
+}
+.logo {
+  width: 60px;
+ 
+  margin-right: 100px;
 }
 
-nav ul {
+ nav ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   margin: 0;
   padding: 0;
   justify-content: center;
+  margin-top: 40px;
+  margin-right: 40px;
 }
 
 nav ul li {
   display: inline-block;
-  margin-right: 120px; /* Adjust this value for desired spacing */
+  margin-right: 120px; 
   cursor: pointer;
   font-size: 18px;
   color: #ffecd1;
 }
 nav ul li a {
-  color: black /* Set the color of the icon to white */
+  color: black  
 }
 
-nav ul li a:hover {
+ nav ul li a:hover {
   color: #78290f;
 }
 nav ul li.active {
   font-weight: bold;
-}
+}   

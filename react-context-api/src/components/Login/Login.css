@@ -1,14 +1,12 @@
 .login-container {
-  width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
   height: 700px;
   /* padding: 20px; */
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
-  align-items: center;
- 
+  background-color: #f0d6e6;
+  align-items: center; 
 }
 
 .login-container h2 {
@@ -21,14 +19,13 @@
 }
 
 .form-group label {
-  /* display: block; */
+  display: block;
   margin-bottom: 5px;
+  color: black;
 }
 
-.form-group input[type="email"],
-.form-group input[type="userName"],
-.form-group input[type="password"] {
-  width: 95%;
+.form-group input {
+  width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -51,8 +48,13 @@
 }
 .btn {
   background-color: red;
-  margin-top: 80px;
-  margin-left: 200px;
+  margin-top: 20px;
+  margin-left: 180px;
+}
+.title {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
 }
 
 

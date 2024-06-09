@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../Booking/Booking.css";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
 export const Booking = ({Booking}) => {
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
   const [booking, setBooking] = useState("");
   const [confirmationId, setConfirmationId,] = useState("");
   const [contact, setContact] = useState("");
@@ -32,7 +33,7 @@ export const Booking = ({Booking}) => {
       
 
         try {
-            const response = await axios.get(`{API_URL}/booking/booking`, newBooking);
+            const response = await axios.get("${API_URL}/booking/${bookingid}", newBooking);
             if(response.status === 200 ){
               setBooking(response.data);
             }
@@ -50,7 +51,7 @@ export const Booking = ({Booking}) => {
     };
     function handleDelete() {
       axios
-        .delete(`${API_URL}/booking/${bookingId}`)
+        .delete("${API_URL}/booking/${bookingId}")
         .then(() => navigate(`/booking`));
     }
 
