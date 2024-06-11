@@ -3,7 +3,7 @@
   position: static;
   bottom: 0;
   right: 0px;
-  background-color: white;
+  background-color: rgb(48, 39, 217);
   color: black;
  
 }
@@ -37,10 +37,31 @@ h1 {
   justify-content: center;
 }
 
-#dashboard-page {
-  align-content: center;
+/* Dashboard Page */
+.dashboard-page {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.dashboard-page img {
+  max-width: 400px;
+  max-height: 400px;
+  margin-bottom: 10px;
+}
+
+.dashboard-page p {
+  margin: 5px 0;
+}
+
+#dashboard-page {
+  
   align-items: center;
   align-items: center
 }
@@ -142,6 +163,10 @@ a:hover {
 .filter-section input[type="text"]:focus {
   outline: none;
   border-color: #2b7775;
+}
+.no-room {
+  color: black;
+  margin-left: 60px;
 }
 
 /* Responsive styles */

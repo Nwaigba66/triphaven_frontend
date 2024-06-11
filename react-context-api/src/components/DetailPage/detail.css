@@ -1,4 +1,4 @@
-/* .title {
+/* /* .title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     color: red;
@@ -49,11 +49,15 @@ body {
     padding-right: 20px;
   
    } 
+   .para-text {
+    color: black;
+   }
   
   .title {
     text-align: center;
     margin-top: 20px;
     color: red;
+    font-size: 40px;
   }
   
   .home-details-container {
@@ -62,7 +66,7 @@ body {
     align-items: center;
     margin-top: 20px;
   }
-  
+  /* 
   .home-details-container img {
     width: 100%;
     border-radius: 5px;
@@ -123,7 +127,7 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
+  } */
   .details-card {
     background-color: #fff;
     /* margin-top: 65px; */
@@ -161,4 +165,4 @@ body {
       height: 300px;
     }
   }
-  
+   */

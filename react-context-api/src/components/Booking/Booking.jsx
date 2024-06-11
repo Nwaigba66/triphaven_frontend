@@ -33,7 +33,7 @@ export const Booking = ({Booking}) => {
       
 
         try {
-            const response = await axios.get("${API_URL}/booking/${bookingid}", newBooking);
+            const response = await axios.get("http://localhost:3000/booking/${:bookingid}", newBooking);
             if(response.status === 200 ){
               setBooking(response.data);
             }
@@ -51,7 +51,7 @@ export const Booking = ({Booking}) => {
     };
     function handleDelete() {
       axios
-        .delete("${API_URL}/booking/${bookingId}")
+        .delete("http://localhost:3000/booking/${:bookingId}")
         .then(() => navigate(`/booking`));
     }
 
@@ -123,6 +123,7 @@ export const Booking = ({Booking}) => {
               </div> 
         
               <button type="submit">Submit Booking</button>
+              <button onClick={() => nav("/dashboard/:homeId")}>Previous</button>
               
               </form>
               {error ? <h4 className="error-message">{error}</h4> : null}

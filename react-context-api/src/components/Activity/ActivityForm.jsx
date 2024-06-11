@@ -42,7 +42,7 @@ export const ActivityForm = () => {
     };
 
     axios
-      .post(`${API_URL}/activity`, activityToCreate, {
+      .post("http://localhost:3000/activity", activityToCreate, {
         headers: {
           authorization: `Bearer ${theToken}`,
         },

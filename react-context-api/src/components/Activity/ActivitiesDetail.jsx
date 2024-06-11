@@ -33,7 +33,7 @@ export default function ActivitiesDetails() {
   useEffect(() => {
     const getOneAct = async () => {
       try {
-        const thisAct = await axios.get(`${API_URL}/activity/${activityId}`);
+        const thisAct = await axios.get("http://localhost:3000/activity/${activityId}");
         const { title, description, location, meetingPoint, capacity, datesAvailable, startTime, endTime, price, thumbnail, images, host, latitude, longitude } = thisAct.data;
         setActivity({ title, description, location, meetingPoint, capacity, datesAvailable, startTime, endTime, price, thumbnail, images, host, latitude, longitude });
         setActivityCoordinates({ lat: latitude, lng: longitude });
@@ -44,7 +44,7 @@ export default function ActivitiesDetails() {
     };
 
     axios
-      .get(`${API_URL}/review/${activityId}`)
+      .get("http://localhost:3000/review/${:activityId}")
       .then((response) => {
         setReviews(response.data);
       })
@@ -62,9 +62,9 @@ export default function ActivitiesDetails() {
   const handleDelete = () => {
     if (confirm("Are you sure ?")) {
       axios
-        .delete(`${API_URL}/activity/${activityId}`)
+        .delete("http://localhost:3000/activity/${activityId}")
         .then((response) => {
-          axios.get(`${API_URL}/activity`)
+          axios.get("http://localhost:3000/activity")
           .then((response) => {
             setActivity(response.data);
           });
@@ -91,7 +91,7 @@ export default function ActivitiesDetails() {
       rating,
     };
     axios
-      .post(`${API_URL}/review`, review)
+      .post(`"http://localhost:3000"/review`, review)
       .then((response) => {
         console.log(response);
         nav(0);

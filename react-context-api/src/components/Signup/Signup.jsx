@@ -17,7 +17,7 @@ export const Signup = () => {
 
     const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
-    // console.log("testing my .env", `${API_URL}/auth/signup`);
+    // console.log("testing my .env", "http://localhost:3000/auth/signup");
     
     const nav = useNavigate();
 
@@ -51,7 +51,7 @@ export const Signup = () => {
 
         // const userToCreate = { userName, email, password };
         try {
-            const response = await axios.post(`{API_URL}/auth/signup`, formData, newUser);
+            const response = await axios.post("http://localhost:3000/auth/signup", formData, newUser);
             console.log("You created a user", response.data);
             
             //this code allows new users navigate to the login page after creating a user account
@@ -67,7 +67,7 @@ export const Signup = () => {
     return (
         <>
         <div className="signin-container">
-       <h2 className="title">Signup Here</h2>
+       <h2 className="title-signup">Signup Here</h2>
                 <form onSubmit={handleSignup}>
                 <div className="form-group">
                         <label>Title:</label>

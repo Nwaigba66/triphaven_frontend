@@ -28,7 +28,7 @@
   }
   
    .activity-card {
-    background-color: rgb(129, 45, 45);
+    background-color: white;
     color: rgba(97, 55, 86, 255);
     display: flex;
     padding: 0.5%;
@@ -54,6 +54,11 @@
   .activity-content h2 {
     font-family: Mountains;
     font-size: 2em;
+  }
+  .title-text {
+    align-items: center;
+    color: black;
+    margin-left: 20px;
   }
   
   .activity-content p {

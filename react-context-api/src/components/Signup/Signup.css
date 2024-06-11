@@ -7,10 +7,12 @@
     background-color: #f0d6e6;
     align-items: center;
   }
-  .title {
-    color: black;
+  .title-signup {
+    color: red;
     font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
+    font-size: 30px;
+    text-align: center;
+   
   }
   
   

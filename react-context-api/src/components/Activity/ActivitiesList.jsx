@@ -10,7 +10,7 @@ export default function ActivitiesList() {
 
   const getActivities = async () => {
     try {
-      const allAct = await axios.get(`${API_URL}/activity/`);
+      const allAct = await axios.get("http://localhost:3000/activity/");
       setActivities(allAct.data);
     } catch (err) {
       console.log("Error fetching all activities", err);
@@ -30,6 +30,7 @@ export default function ActivitiesList() {
     <div className="activity-block">
       <div className="activity-list">
         <h1>Our Activities</h1>
+        <h2 className="title-text">Welcome Triphaven Activity page. You are free to add your activity on our form below</h2>
         <Link to="/activity-form">
           <button>Add an activity</button>
         </Link>

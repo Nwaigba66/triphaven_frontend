@@ -7,7 +7,7 @@ import { NavBar } from "../NavBar/NavBar";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
-export const Login = () => {s
+export const Login = () => {
     const [email, setEmail] = useState("");
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
@@ -21,7 +21,7 @@ export const Login = () => {s
 
         const userLogin = { email, userName, password };
         try {
-            const response = await axios.post(`${API_URL}/auth/login`, userLogin);
+            const response = await axios.post("http://localhost:3000/auth/login", userLogin);
             console.log("You are logged in", response.data);
 
             // Store the authToken from the server in local storage if login is successful

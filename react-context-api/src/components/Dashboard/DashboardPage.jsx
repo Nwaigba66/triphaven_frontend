@@ -19,7 +19,7 @@ export const DashboardPage = () => {
     useEffect(() => {
         const getRooms = async () => {
             try {
-                const response = await axios.get("${API_URL}/home/allhomes");
+                const response = await axios.get("http://localhost:3000/home/allhomes");
                 setRooms(response.data);
                 filterRooms(response.data);
             } catch (err) {
@@ -127,7 +127,7 @@ export const DashboardPage = () => {
                     </Link>
                 ))
             ) : (
-                <p>No rooms found.</p>
+                <p className="no-room">No rooms found.</p>
             )}
 
               

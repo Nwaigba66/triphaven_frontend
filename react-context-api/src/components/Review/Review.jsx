@@ -10,14 +10,14 @@ export const Review = () => {
     const [error, setError] = useState(null);
 
     const nav = useNavigate();
-    const API_URL = import.meta.env.VITE_API_URL || "${API_URL}"
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const newRating = { homeId: home, rating, comment };
-            const response = await axios.get(`${API_URL}/review/{reviewId}`, newRating);
+            const response = await axios.get("http://localhost:3000/review/{reviewId}", newRating);
             console.log("You created a new Rating", response.data);
 
             if (response.status === 200) {
@@ -75,11 +75,15 @@ export const Review = () => {
                         <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
                     </select>
                 </label>
+                <div className="booking-group">
                 <label className="comment-btn">
                     Comment:
                     <textarea value={comment} onChange={(e) => setComment(e.target.value)} required />
                 </label>
+                </div>
+               
                 <button className="review-btn" type="submit">Submit Review</button>
+                <button onClick={() => nav("/dashboard/:homeId")}>Previous</button>
             </form>
         </div>
         </>

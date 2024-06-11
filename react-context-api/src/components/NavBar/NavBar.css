@@ -1,6 +1,6 @@
 .nav-container {
   right: 0px;
-  background-color: white;
+  background-color: rgba(47, 20, 166, 0.901);
   position: fixed;
   bottom: 0;
   display: flex;

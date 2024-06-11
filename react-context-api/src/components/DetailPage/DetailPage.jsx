@@ -13,7 +13,7 @@ const DetailPage = () => {
     useEffect(() => {
         const getOneRoom = async () => {
             try {
-                const response = await axios(`{API_URL}/home/${roomId}`);
+                const response = await axios.get(`${API_URL}/home/${roomId}`);
                 console.log(response.data);
                 setRoom(response.data);
             } catch (err) {
@@ -32,20 +32,20 @@ const DetailPage = () => {
         <div className="detail-container">
             <h2 className="title">Room Information</h2>
 
-            <img src={room.imageUrl} alt="Room" width={500} height={500} />
-            <p>Guest : {room.guest}</p>
-            <p>Name : {room.name}</p>
-            <p>City : {room.city}</p>
-            <p>State : {room.state}</p>
-            <p>Country : {room.country}</p>
-            <p>AvailableUnits : {room.availabeUnits}</p>
-            <p>Wifi : {room.wifi}</p>
-            <p>Price : {room.price}</p>
-            <p>priceCurrency : {room.priceCurrency}</p>
-            <p>Latitude : {room.latitude}</p>
-            <p>Longitude : {room.longitude}</p>
-            <p>Ratings : {room.rating}</p>
-            <p>Laundry : {room.laundry}</p>
+            <img src={room.imageUrl} alt={room.room_name} width={500} height={500} />
+            <p className="para-text">Guest : {room.guest}</p>
+            <p className="para-text">Name : {room.name}</p>
+            <p className="para-text">City : {room.city}</p>
+            <p className="para-text">State : {room.state}</p>
+            <p className="para-text">Country : {room.country}</p>
+            <p className="para-text">AvailableUnits : {room.availabeUnits}</p>
+            <p className="para-text">Wifi : {room.wifi}</p>
+            <p className="para-text">Price : {room.price}</p>
+            <p className="para-text">priceCurrency : {room.priceCurrency}</p>
+            <p className="para-text">Latitude : {room.latitude}</p>
+            <p className="para-text">Longitude : {room.longitude}</p>
+            <p className="para-text">Ratings : {room.rating}</p>
+            <p className="para-text">Laundry : {room.laundry}</p>
             </div>
          
 

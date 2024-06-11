@@ -28,7 +28,7 @@ export const UpdateForm = () => {
       useEffect(() => {
         const getUpdateProduct = async () => {
           try {
-            const response = await axios.get(`{API_URL}/room/${roomId}`);
+            const response = await axios.get("http://localhost:3000/home/${roomId}");
             const updatedRoom = response.data;
     
             setRoom(updatedRoom.room);
@@ -74,7 +74,7 @@ export const UpdateForm = () => {
         };
     
         try {
-          const response = await axios.put(`${API_URL}/room/${roomId}`, roomData);
+          const response = await axios.put("http://localhost:3000/home/${roomId}", roomData);
           console.log("Room updated successfully:", response.data);
           nav(`/home/${roomId}`);
         } catch (error) {
@@ -113,7 +113,7 @@ export const UpdateForm = () => {
                 <input
                   type="text"
                   value={guest}
-                  onChange={(e) => setGuest(e.target.value)}
+                  onChange={(e) => setGuest(e.target.value)} required
                   className="form-input"
                 />
               </div>
@@ -122,7 +122,7 @@ export const UpdateForm = () => {
                 <input
                   type="text"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)} required
                   className="form-input"
                 />
               </div>
@@ -130,13 +130,13 @@ export const UpdateForm = () => {
                 <label>Country:</label>
                 <select
                   value={country}
-                  onChange={(e) => setCountry(e.target.value)}
+                  onChange={(e) => setCountry(e.target.value)} required
                   className="form-select"
                 >
                   <option value="">Select country</option>
                   <option value="Germany">Germany</option>
                   <option value="USA">USA</option>
-                  <option value="USA">Nigeria</option>
+                  <option value="Nigeria">Nigeria</option>
                 </select>
               </div>
               {country === "Germany" && (
@@ -144,7 +144,7 @@ export const UpdateForm = () => {
                   <label>State:</label>
                   <select
                     value={state}
-                    onChange={(e) => setState(e.target.value)}
+                    onChange={(e) => setState(e.target.value)} required
                     className="form-select"
                   >
                     <option value="">Select state</option>
@@ -159,7 +159,7 @@ export const UpdateForm = () => {
                   <label>State:</label>
                   <select
                     value={state}
-                    onChange={(e) => setState(e.target.value)}
+                    onChange={(e) => setState(e.target.value)} required
                     className="form-select"
                   >
                     <option value="">Select state</option>
@@ -174,7 +174,7 @@ export const UpdateForm = () => {
                 <input
                   type="text"
                   value={city}
-                  onChange={(e) => setCity(e.target.value)}
+                  onChange={(e) => setCity(e.target.value)} required
                   className="form-input"
                 />
               </div>
@@ -183,36 +183,42 @@ export const UpdateForm = () => {
                 <input
                   type="text"
                   value={availableUnits}
-                  onChange={(e) => setAvailableUnits(e.target.value)}
+                  onChange={(e) => setAvailableUnits(e.target.value)} required
                   className="form-input"
                 />
               </div>
               <div className="form-group">
                 <label>WiFi:</label>
-                <input
-                  type="text"
-                  value={wifi}
-                  onChange={(e) => setWifi(e.target.value)}
-                  className="form-input"
-                />
+                <select
+                    value={wifi}
+                    onChange={(e) => setWifi(e.target.value)} required
+                    className="form-select"
+                  >
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
               </div>
               <div className="form-group">
                 <label>Price:</label>
                 <input
                   type="text"
                   value={price}
-                  onChange={(e) => setPrice(e.target.value)}
+                  onChange={(e) => setPrice(e.target.value)} required
                   className="form-input"
                 />
               </div>
               <div className="form-group">
                 <label>Price Currency:
-                <input
-                  type="text"
-                  value={priceCurrency}
-                  onChange={(e) => setPriceCurrency(e.target.value)}
-                  className="form-input"
-                />
+                <select
+                    value={priceCurrency}
+                    onChange={(e) => setPriceCurrency(e.target.value)} required
+                    className="form-select"
+                  >
+                    <option value="">Select</option>
+                    <option value="Euro">Euro</option>
+                    <option value="Dollar">Dollar</option>
+                    <option value="Naira">Naira</option>
+                  </select>
                 </label>
               </div>
               <div className="form-group">
@@ -220,10 +226,11 @@ export const UpdateForm = () => {
                 <input
                   type="text"
                   value={latitude}
-                  onChange={(e) => setLatitude(e.target.value)}
+                  onChange={(e) => setLatitude(e.target.value)} required
                   className="form-input"
                 />
               </div>
+              <div className="form-group">
               <label>
                 Rating:
                 <select value={rating} onChange={(e) => setRating(e.target.value)} required>
@@ -235,18 +242,26 @@ export const UpdateForm = () => {
                     <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
                 </select>
             </label>
+            </div>
               <div className="form-group">
                 <label>Laundry:</label>
-                <input
-                  type="text"
-                  value={laundry}
-                  onChange={(e) => setLaundry(e.target.value)}
-                  className="form-input"
-                />
+                <select
+                    value={laundry}
+                    onChange={(e) => setLaundry(e.target.value)} required
+                    className="form-select"
+                  >
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Not Available">Not Available</option>
+                  </select>
               </div>
               <button type="submit" className="submit-button">
                 Update Room Details
               </button>
+              
+              <button onClick={() => nav("/dashboard/:homeId")}>Previous</button>
+             
             </form>
             </div>
           </div>
